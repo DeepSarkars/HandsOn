@@ -9,7 +9,7 @@ public class SubscriberOne implements Observer {
 	}
 
 	@Override
-	public void update() {
-		System.out.println("Subscriber one: "+publisher.getState());
+	public void update(Message m) {
+		System.out.println("Subscriber one: "+m.getMessageString());
 	}
 }

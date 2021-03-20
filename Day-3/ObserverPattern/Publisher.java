@@ -4,15 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Publisher implements Subject{
-	String state;
-
-	public String getState() {
-		return state;
-	}
-
-	public void setState(String state) {
-		this.state = state;
-	}
+//	String state;
+//
+//	public String getState() {
+//		return state;
+//	}
+//
+//	public void setState(String state) {
+//		this.state = state;
+//	}
 
 	private List<Observer> observers = new ArrayList<>();
 	@Override
@@ -26,9 +26,10 @@ public class Publisher implements Subject{
 	}
 
 	@Override
-	public void notifyAllObservers() {
+	public void notifyAllObservers(Message m) {
 		for(Observer obs: observers) {
-			obs.update();
-		}		
+			obs.update(m);
+		}
+		
 	}
 }
